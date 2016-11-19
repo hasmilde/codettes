@@ -7,6 +7,11 @@ angular.module('starter.controllers', [])
     $scope.changeMeal = changeMeal;
     $scope.getMeal = getMeal;
 
+    $scope.getRecipeIsRetrieved = getRecipeIsRetrieved;
+    $scope.setRecipeIsRetrieved = setRecipeIsRetrieved;
+
+    $scope.recipeIsRetrieved = false;
+
     dataService.getUser().then(function(res) {
         $scope.user = res;
         getEnergy($scope.user)
@@ -64,10 +69,19 @@ angular.module('starter.controllers', [])
         }
     }
 
+    function getRecipeIsRetrieved () {
+        return dataService.getRecipeIsRetrieved();
+    }
+
+    function setRecipeIsRetrieved (val) {
+        dataService.setRecipeIsRetrieved(val);
+    }
+
     function getMeal() {
       dataService.getMeal($scope.user, $scope.meal).then(function(res){
         $scope.recipe = res;
-      })
+      });
+      setRecipeIsRetrieved(true);
     }
 })
 

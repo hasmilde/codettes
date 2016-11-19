@@ -3,10 +3,13 @@ angular.module('starter.services', [])
 
 function dataService($q, $http) {
     var self = this;
+    var recipeIsRetrieved = false;
 
     return {
         getMeal: getMeal,
-        getUser: getUser
+        getUser: getUser,
+        getRecipeIsRetrieved: getRecipeIsRetrieved,
+        setRecipeIsRetrieved: setRecipeIsRetrieved
     };
 
     function getMeal() {
@@ -31,5 +34,13 @@ function dataService($q, $http) {
                 deferred.reject(data);
             });
         return deferred.promise;
+    }
+
+    function getRecipeIsRetrieved () {
+        return recipeIsRetrieved;
+    }
+
+    function setRecipeIsRetrieved (val) {
+        recipeIsRetrieved = val;
     }
 }

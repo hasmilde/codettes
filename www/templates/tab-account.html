@@ -1,6 +1,15 @@
-<ion-view view-title="Account">
+<ion-view>
+    <ion-nav-title><img src="/img/jane jr.png" style="vertical-align: middle;padding-right: 5px;">Accounts</ion-nav-title>
   <ion-content class="padding">
   <h4>Personal details</h4>
+      <label class="item item-input" style="text-align: center;">
+          <div><center>
+              <span class="input-label" style="text-align: center;">
+                Profile picture
+                <center><img src="/img/jane.png" required/></center>
+              </span>
+          </center></div>
+      </label>
         <label class="item item-input">
             <span class="input-label">Name</span>
             <input type="text" style="text-align: right;" ng-model="user.name" ng-change="getEnergy(user)" required>

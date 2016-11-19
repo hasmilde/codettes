@@ -12,6 +12,8 @@ angular.module('starter.controllers', [])
     $scope.getSustainabilityIsRetrieved = getSustainabilityIsRetrieved;
     $scope.setSustainabilityIsRetrieved = setSustainabilityIsRetrieved;
 
+    $scope.AccountWithPicture='<img class="title-image" src="img/ben.png" />';
+
     $scope.recipeIsRetrieved = false;
 //    $scope.sustainabilityIsRetrieved = false;
 

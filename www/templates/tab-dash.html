@@ -1,67 +1,16 @@
 <ion-view view-title="Dashboard">
     <ion-content class="padding">
-      <h3>Gegevens</h3>
-        <label class="item item-input">
-            <span class="input-label">Naam</span>
-            <input type="text" style="text-align: right;" ng-model="user.name" ng-change="getEnergy(user)" required>
-        </label>
-        <label class="item item-input">
-            <span class="input-label">Leeftijd</span>
-            <input type="text" style="text-align: right;" ng-model="user.age" ng-change="getEnergy(user)" required>
-        </label>
-        <label class="item item-input">
-            <span class="input-label">Gewicht (kg)</span>
-            <input type="text" style="text-align: right;" ng-model="user.weight" ng-change="getEnergy(user)" required>
-        </label>
-        <label class="item item-input item-select">
-            <div class="input-label">Geslacht</div>
-            <select ng-model="user.gender" ng-change="getEnergy(user)">
-                <option value="m">Man</option>
-                <option value="f">Vrouw</option>
-            </select>
-        </label>
-        <label class="item item-input">
-            <span class="input-label">Lengte</span>
-            <input type="text" style="text-align: right;" ng-model="user.length" ng-change="getEnergy(user)" required>
-        </label>
-        <label class="item item-input item-select">
-            <div class="input-label">Leefstijl</div>
-            <select ng-model="user.PAL" ng-change="getEnergy(user)">
-                <option value="1.2">Inactief</option>
-                <option value="1.4">Zittende arbeid</option>
-                <option value="1.6">Zittende arbeid met rondlopen</option>
-                <option value="1.8">Staande arbeid</option>
-                <option value="2.2">Veel lichamelijke inspanning</option>
-                <option value="4">Extreme fysieke belasting</option>
-            </select>
-        </label>
-        <label class="item item-input item-select">
-            <div class="input-label">Gewichtswensen</div>
-            <select ng-model="user.diet" ng-change="getEnergy(user)">
-                <option value="-400">Afvallen</option>
-                <option value="0">Gelijk</option>
-                <option value="400">Aankomen</option>
-            </select>
-        </label>
-        <label class="item item-input item-select">
-            <div class="input-label">Lichaamsbouw wensen</div>
-            <select ng-model="user.body" ng-change="getNutrients()">
-                <option value="muscle">Spieropbouw</option>
-                <option value="maintain">Onderhoud</option>
-                <option value="fat">Vetverlies</option>
-            </select>
-        </label>
-        <h3> Voedsel verleden (gemiddeld over de afgelopen 2 weken)</h3>
-        <p>Eiwitten {{user.history.protein}} / {{user.protein}}</p>
-        <p>Koolhydraten {{user.history.carbs}} / {{user.carbs}}</p>
-        <p>Vetten {{user.history.fat}} / {{user.fat}}</p>
-        <p>Zout {{user.history.salt}} / 5g</p>
+        <h3> Food history (average over the last two weeks)</h3>
+        <p>Protein {{user.history.protein}} / {{user.protein}}</p>
+        <p>Carbs {{user.history.carbs}} / {{user.carbs}}</p>
+        <p>Fat {{user.history.fat}} / {{user.fat}}</p>
+        <p>Salt {{user.history.salt}} / 5g</p>
         <p>Calcium {{user.history.calcium}} / 1.5g</p>
-        <p>IJzer {{user.history.iron}} / 30mg</p>
-        <h3> Advies </h3>
-        <p><b>Energiebehoefte per dag: </b>{{user.energy}} kcal</p>
+        <p>Iron {{user.history.iron}} / 30mg</p>
+        <h3> Advice </h3>
+        <p><b>Energy needs per day: </b>{{user.energy}} kcal</p>
         <div class="item range range-positive">
-            <label style="width:130px">Ontbijt  <span style="float:right">{{user.breakfast}}</span></label>
+            <label style="width:130px">Breakfast  <span style="float:right">{{user.breakfast}}</span></label>
             <i class="icon ion-ios-sunny-outline"></i>
             <input type="range" name="volume" min="0" max="{{user.energy}}" ng-model="user.breakfast" ng-change="changeMeal('b')">
             <i class="icon ion-ios-sunny"></i>
@@ -73,20 +22,20 @@
             <i class="icon ion-ios-sunny"></i>
         </div>
         <div class="item range range-positive">
-            <label style="width:130px">Diner <span style="float:right">{{user.diner}}</span></label>
+            <label style="width:130px">Dinner <span style="float:right">{{user.diner}}</span></label>
             <i class="icon ion-ios-sunny-outline"></i>
             <input type="range" name="volume" min="0" max="{{user.energy}}" ng-model="user.diner" ng-change="changeMeal('d')">
             <i class="icon ion-ios-sunny"></i>
         </div>
         <div class="item range range-positive">
-            <label style="width:130px">Tussendoor <span style="float:right">{{user.rest}}</span></label>
+            <label style="width:130px">Snacks <span style="float:right">{{user.rest}}</span></label>
             <i class="icon ion-ios-sunny-outline"></i>
             <input type="range" name="volume" min="0" max="{{user.energy}}" ng-model="user.rest" ng-change="changeMeal('r')">
             <i class="icon ion-ios-sunny"></i>
         </div>
-        <h3>Voorkeuren maaltijd</h3>
+        <h3>Meal preferences</h3>
         <label class="item item-input item-select">
-            <div class="input-label">Moeilijkheidsgraad</div>
+            <div class="input-label">Difficulty level</div>
             <select ng-model="meal.dificulty">
                 <option value="4">*****</option>
                 <option value="4">****</option>
@@ -96,9 +45,9 @@
             </select>
         </label>
         <label class="item item-input">
-            <span class="input-label">Ingredienten</span>
+            <span class="input-label">Ingredients</span>
             <input type="text" style="text-align: right;" ng-model="meal.ingredients">
         </label>
-        <button class="button button-energized" style="float:right;margin-top:20px" ng-click="getMeal()">Bedenk maaltijd</button>
+        <button class="button button-energized" style="float:right;margin-top:20px" ng-click="getMeal()">Give me a recipe!</button>
     </ion-content>
 </ion-view>

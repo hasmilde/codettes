@@ -1,5 +1,90 @@
 <ion-view view-title="Account">
   <ion-content>
+  <h3>Personal details</h3>
+        <label class="item item-input">
+            <span class="input-label">Name</span>
+            <input type="text" style="text-align: right;" ng-model="user.name" ng-change="getEnergy(user)" required>
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Age</span>
+            <input type="text" style="text-align: right;" ng-model="user.age" ng-change="getEnergy(user)" required>
+        </label>
+        <label class="item item-input item-select">
+            <div class="input-label">Sex</div>
+            <select ng-model="user.gender" ng-change="getEnergy(user)">
+                <option value="m">Male</option>
+                <option value="f">Female</option>
+            </select>
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Length</span>
+            <input type="text" style="text-align: right;" ng-model="user.length" ng-change="getEnergy(user)" required>
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Weight (kg)</span>
+            <input type="text" style="text-align: right;" ng-model="user.weight" ng-change="getEnergy(user)" required>
+        </label>
+        <label class="item item-input item-select">
+            <div class="input-label">Lifestyle</div>
+            <select ng-model="user.PAL" ng-change="getEnergy(user)">
+                <option value="1.2">Inactive</option>
+                <option value="1.4">Office job</option>
+                <option value="1.6">Office job with some walking</option>
+                <option value="1.8">Active job</option>
+                <option value="2.2">A lot of physical exercise</option>
+                <option value="4">Extreme physical exercise</option>
+            </select>
+        </label>
+        <label class="item item-input item-select">
+            <div class="input-label">Weight goal</div>
+            <select ng-model="user.diet" ng-change="getEnergy(user)">
+                <option value="-400">Loose weight</option>
+                <option value="0">Stay on current weight</option>
+                <option value="400">Gain weight</option>
+            </select>
+        </label>
+        <label class="item item-input item-select">
+            <div class="input-label">Body composition goals</div>
+            <select ng-model="user.body" ng-change="getNutrients()">
+                <option value="muscle">Building muscles</option>
+                <option value="maintain">Stay on current body composition</option>
+                <option value="fat">Loosing fat</option>
+            </select>
+        </label>
+    <h3> Preferences</h3>
+    <ion-list>
+    	<ion-toggle>
+    	Cholesterol
+    	</ion-toggle>
+    	<ion-toggle>
+    	Diabetes
+    	</ion-toggle>
+    	<ion-toggle>
+    	Egg-free
+    	</ion-toggle>
+    	<ion-toggle>
+    	Gluten-free
+    	</ion-toggle>
+    	<ion-toggle ng-model="settings.milkFree">
+    	Milk free
+    	</ion-toggle>
+    	<ion-toggle>
+    	Vegetarian
+    	</ion-toggle>
+    	<ion-toggle>
+    	Vegan
+    	</ion-toggle>
+    	<ion-toggle>
+    	No pork
+    	</ion-toggle>
+    	<ion-toggle>
+    	No beef
+    	</ion-toggle>
+    	<ion-toggle>
+    	No fish
+    	</ion-toggle>
+    </ion-list>
+    <h3> Option</h3>
     <ion-list>
     <ion-toggle  ng-model="settings.enableFriends">
         Enable Friends

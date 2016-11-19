@@ -80,21 +80,28 @@ angular.module('starter.controllers', [])
     //$scope.$on('$ionicView.enter', function(e) {
     //});
 
-    dataService.all().then(function(res) {
-        $scope.chats = res;
-    });
+    // dataService.all().then(function(res) {
+    //     $scope.chats = res;
+    // });
 
-    $scope.remove = function(chat) {
-        dataService.remove(chat);
-    };
+    // $scope.remove = function(chat) {
+    //     dataService.remove(chat);
+    // };
+    dataService.getUser().then(function(res) {
+        $scope.user = res;
+    })
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, dataService) {
     $scope.chat = dataService.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, dataService) {
+    dataService.getUser().then(function(res) {
+        $scope.user = res;
+    })
     $scope.settings = {
+        milkFree:true,
         enableFriends: true
     };
 });

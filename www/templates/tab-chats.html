@@ -1,16 +1,34 @@
 <ion-view view-title="Chats">
   <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
+    <label class="item item-input item-select">
+            <div class="input-label">Vegetables and/or fruit</div>
+            <select>
+                <option >Vegetables and fruit</option>
+                <option >Vegetables</option>
+                <option >Fruit</option>
+            </select>
+        </label>
+        <label class="item item-input item-select">
+            <div class="input-label">Maand</div>
+            <select>
+                <option >January</option>
+                <option >February</option>
+                <option >March</option>
+                <option >April</option>
+                <option >May</option>
+                <option >June</option>
+                <option >July</option>
+                <option >August</option>
+                <option >September</option>
+                <option >October</option>
+                <option >November</option>
+                <option >December</option>
+            </select>
+        </label>
+        <h3> Class </h3>
+        <ion-item>
+          <ion-label>Label A</ion-label>
+          <ion-checkbox color="green" checked="true"></ion-checkbox>
+        </ion-item>
   </ion-content>
 </ion-view>

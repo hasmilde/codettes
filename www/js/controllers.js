@@ -9,8 +9,11 @@ angular.module('starter.controllers', [])
 
     $scope.getRecipeIsRetrieved = getRecipeIsRetrieved;
     $scope.setRecipeIsRetrieved = setRecipeIsRetrieved;
+    $scope.getSustainabilityIsRetrieved = getSustainabilityIsRetrieved;
+    $scope.setSustainabilityIsRetrieved = setSustainabilityIsRetrieved;
 
     $scope.recipeIsRetrieved = false;
+//    $scope.sustainabilityIsRetrieved = false;
 
     dataService.getUser().then(function(res) {
         $scope.user = res;
@@ -75,6 +78,14 @@ angular.module('starter.controllers', [])
 
     function setRecipeIsRetrieved (val) {
         dataService.setRecipeIsRetrieved(val);
+    }
+
+    function getSustainabilityIsRetrieved () {
+        return dataService.getSustainabilityIsRetrieved();
+    }
+
+    function setSustainabilityIsRetrieved (val) {
+        dataService.setSustainabilityIsRetrieved(val);
     }
 
     function getMeal() {

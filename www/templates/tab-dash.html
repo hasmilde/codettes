@@ -1,5 +1,7 @@
-<ion-view view-title="Dashboard" ng-if="!getRecipeIsRetrieved()">
-    <ion-content class="padding">
+<ion-view view-title="Dashboard">
+    <!--<ion-content class="padding">-->
+    <ion-content class="padding" >
+        <div ng-if="!getRecipeIsRetrieved()">
         <h4> Food history (average over the last two weeks)</h4>
         <ion-item>Protein {{user.history.protein}} / {{user.protein}}</ion-item>
         <ion-item>Carbs {{user.history.carbs}} / {{user.carbs}}</ion-item>
@@ -51,10 +53,10 @@
             <input type="text" style="text-align: right;" ng-model="meal.ingredients">
         </label>
         <button class="button button-energized" style="float:right;margin-top:20px" ng-click="getMeal()">Give me a recipe!</button>
+        </div>
     </ion-content>
-</ion-view>
 
-<ion-view view-title="Dashboard" ng-if="getRecipeIsRetrieved()">
+    <div ng-if="getRecipeIsRetrieved()">
     <ion-content class="padding">
         <h3>Recipe details</h3>
         <img src="/img/kale.jpg"/>
@@ -94,4 +96,5 @@
         <p>Remove chorizo from casing and cook in a large saute pan for about 4 minutes. Remove and set aside. Add sweet potatoes, garlic powder, cumin and olive oil to the pan and cook for 5 minutes. Add the onions and cooked chorizo back to the pan, and cook for another 5 minutes. Add the kale and cook until wilted - about 2 minutes. Remove from heat, add lime juice, and season with salt and pepper to taste before serving.</p>
         <button class="button button-energized" style="float:right;margin-top:20px" ng-click="setRecipeIsRetrieved(false)">Back</button>
     </ion-content>
+    </div>
 </ion-view>

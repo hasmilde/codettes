@@ -1,36 +1,73 @@
-<ion-view view-title="Chats">
-  <ion-content class="padding">
-    <h4> Sustainability </h4>
-    <label class="item item-input item-select">
+<ion-view view-title="Sustainability"> 
+    <ion-content class="padding"> 
+        <div ng-if="!getSustainabilityIsRetrieved()"><h4>Sustainability</h4>  <label
+            class="item item-input item-select"> 
         <div class="input-label">Vegetables and/or fruit</div>
-            <select>
-                <option >Vegetables and fruit</option>
-                <option >Vegetables</option>
-                <option >Fruit</option>
-            </select>
-        </label>
-        <label class="item item-input item-select">
-            <div class="input-label">Month</div>
-            <select>
-                <option >January</option>
-                <option >February</option>
-                <option >March</option>
-                <option >April</option>
-                <option >May</option>
-                <option >June</option>
-                <option >July</option>
-                <option >August</option>
-                <option >September</option>
-                <option >October</option>
-                <option >November</option>
-                <option >December</option>
-            </select>
-        </label>
-        <h4> Sustainability category </h4>
-          <ion-checkbox class="item item-checkbox  checkbox-balanced" checked="true"> A</ion-checkbox>
-          <ion-checkbox class="item item-checkbox  checkbox-balanced" checked="true"> B</ion-checkbox>
-          <ion-checkbox class="item item-checkbox  checkbox-energized" checked="true"> C</ion-checkbox>
-          <ion-checkbox class="item item-checkbox  checkbox-assertive" checked="true"> D</ion-checkbox>
-          <ion-checkbox class="item item-checkbox  checkbox-assertive" checked="true"> E</ion-checkbox>
-  </ion-content>
-</ion-view>
+          <select> 
+            <option>Vegetables and fruit</option>
+             
+            <option>Vegetables</option>
+             
+            <option>Fruit</option>
+              </select>  </label>  <label class="item item-input item-select"> 
+        <div class="input-label">Month</div>
+          <select> 
+            <option>January</option>
+             
+            <option>February</option>
+             
+            <option>March</option>
+             
+            <option>April</option>
+             
+            <option>May</option>
+             
+            <option>June</option>
+             
+            <option>July</option>
+             
+            <option>August</option>
+             
+            <option>September</option>
+             
+            <option>October</option>
+             
+            <option>November</option>
+             
+            <option>December</option>
+              </select>  </label>  <h4> Sustainability category </h4> 
+        <ion-checkbox class="item item-checkbox  checkbox-balanced" checked="true"> A</ion-checkbox>
+         
+        <ion-checkbox class="item item-checkbox  checkbox-balanced" checked="true"> B</ion-checkbox>
+         
+        <ion-checkbox class="item item-checkbox  checkbox-energized" checked="true"> C</ion-checkbox>
+         
+        <ion-checkbox class="item item-checkbox  checkbox-assertive" checked="true"> D</ion-checkbox>
+         
+        <ion-checkbox class="item item-checkbox  checkbox-assertive" checked="true"> E</ion-checkbox>
+         
+        <button class="button button-energized" style="float:right;margin-top:20px"
+                ng-click="setSustainabilityIsRetrieved(true)">Give me a recipe!
+        </button>
+        </div>
+    </ion-content>
+
+    <div ng-if="getSustainabilityIsRetrieved()">
+          <ion-content class="padding" >
+    <h3>Recipe details</h3><img src="/img/kale.jpg"/>
+    <h4>Ingredients (serves <font color="blue">4</font>)</h4><ion-item>
+    8 oz raw chorizo sausage</ion-item><ion-item>
+    2 cups sweet potato; chopped</ion-item><ion-item>
+    1 Tbl olive oil</ion-item><ion-item>            1/2 cup chopped onion
+    </ion-item> <ion-item>2 cups chopped kale 
+    </ion-item><ion-item>            1 tsp garlic powder</ion-item>
+    <ion-item>1 tsp cumin</ion-item><ion-item>
+    salt and pepper; to taste</ion-item>       <ion-item>
+    1 Tbl lime juice</ion-item><p>&nbsp;</p>
+    <h4>Instructions</h4>
+    <p>Remove chorizo from casing and cook in a large saute pan for about 4 minutes. Remove and set aside. Add sweet potatoes, garlic powder, cumin and olive oil to the pan and cook for 5 minutes. Add the onions and cooked chorizo back to the pan, and cook for another 5 minutes. Add the kale and cook until wilted - about 2 minutes. Remove from heat, add lime juice, and season with salt and pepper to taste before serving.</p>
+     
+    <button class="button button-energized" style="float:right;margin-top:20px" ng-click="setSustainabilityIsRetrieved(false)">Back</button>
+         </ion-content>
+    </div>
+</ion-view> 

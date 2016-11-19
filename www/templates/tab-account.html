@@ -38,7 +38,7 @@
         <label class="item item-input item-select">
             <div class="input-label">Weight goal</div>
             <select ng-model="user.diet" ng-change="getEnergy(user)">
-                <option value="-400">Loose weight</option>
+                <option value="-400">Lose weight</option>
                 <option value="0">Stay on current weight</option>
                 <option value="400">Gain weight</option>
             </select>
@@ -46,9 +46,9 @@
         <label class="item item-input item-select">
             <div class="input-label">Body composition goals</div>
             <select ng-model="user.body" ng-change="getNutrients()">
-                <option value="muscle">Building muscles</option>
+                <option value="muscle">Building muscle</option>
                 <option value="maintain">Stay on current body composition</option>
-                <option value="fat">Loosing fat</option>
+                <option value="fat">Losing fat</option>
             </select>
         </label>
         <p>&nbsp;</p>
@@ -67,7 +67,7 @@
     	Gluten-free
     	</ion-toggle>
     	<ion-toggle ng-model="settings.milkFree">
-    	Milk free
+    	Milk-free
     	</ion-toggle>
     	<ion-toggle>
     	Vegetarian

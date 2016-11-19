@@ -4,12 +4,15 @@ angular.module('starter.services', [])
 function dataService($q, $http) {
     var self = this;
     var recipeIsRetrieved = false;
+    var sustainabilityIsRetrieved = false;
 
     return {
         getMeal: getMeal,
         getUser: getUser,
         getRecipeIsRetrieved: getRecipeIsRetrieved,
-        setRecipeIsRetrieved: setRecipeIsRetrieved
+        setRecipeIsRetrieved: setRecipeIsRetrieved,
+        getSustainabilityIsRetrieved: getSustainabilityIsRetrieved,
+        setSustainabilityIsRetrieved: setSustainabilityIsRetrieved
     };
 
     function getMeal() {
@@ -42,5 +45,13 @@ function dataService($q, $http) {
 
     function setRecipeIsRetrieved (val) {
         recipeIsRetrieved = val;
+    }
+
+    function getSustainabilityIsRetrieved () {
+        return sustainabilityIsRetrieved;
+    }
+
+    function setSustainabilityIsRetrieved (val) {
+        sustainabilityIsRetrieved = val;
     }
 }

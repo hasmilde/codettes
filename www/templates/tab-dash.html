@@ -1,13 +1,14 @@
 <ion-view view-title="Dashboard">
     <ion-content class="padding">
-        <h3> Food history (average over the last two weeks)</h3>
-        <p>Protein {{user.history.protein}} / {{user.protein}}</p>
-        <p>Carbs {{user.history.carbs}} / {{user.carbs}}</p>
-        <p>Fat {{user.history.fat}} / {{user.fat}}</p>
-        <p>Salt {{user.history.salt}} / 5g</p>
-        <p>Calcium {{user.history.calcium}} / 1.5g</p>
-        <p>Iron {{user.history.iron}} / 30mg</p>
-        <h3> Advice </h3>
+        <h4> Food history (average over the last two weeks)</h4>
+        <ion-item>Protein {{user.history.protein}} / {{user.protein}}</ion-item>
+        <ion-item>Carbs {{user.history.carbs}} / {{user.carbs}}</ion-item>
+        <ion-item>Fat {{user.history.fat}} / {{user.fat}}</ion-item>
+        <ion-item>Salt {{user.history.salt}} / 5g</ion-item>
+        <ion-item>Calcium {{user.history.calcium}} / 1.5g</ion-item>
+        <ion-item>Iron {{user.history.iron}} / 30mg</ion-item>
+        <p>&nbsp;</p>
+        <h4> Advice </h4>
         <p><b>Energy needs per day: </b>{{user.energy}} kcal</p>
         <div class="item range range-positive">
             <label style="width:130px">Breakfast  <span style="float:right">{{user.breakfast}}</span></label>
@@ -33,7 +34,8 @@
             <input type="range" name="volume" min="0" max="{{user.energy}}" ng-model="user.rest" ng-change="changeMeal('r')">
             <i class="icon ion-ios-sunny"></i>
         </div>
-        <h3>Meal preferences</h3>
+        <p>&nbsp;</p>
+        <h4>Meal preferences</h4>
         <label class="item item-input item-select">
             <div class="input-label">Difficulty level</div>
             <select ng-model="meal.dificulty">
